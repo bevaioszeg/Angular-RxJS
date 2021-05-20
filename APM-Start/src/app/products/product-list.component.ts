@@ -26,6 +26,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.sub = new Subscription();
     this.selectedCategorySubject = new BehaviorSubject<number>(0);
+    
     this.sub.add(
       combineLatest([
         this.productService.getProductsWithCategory(),
